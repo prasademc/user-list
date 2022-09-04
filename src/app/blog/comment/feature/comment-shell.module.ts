@@ -7,16 +7,19 @@ import { CommentShellRoutingModule } from './comment-shell-routing.module';
 
 // Import components
 import { CommentDetailComponent } from '../../comment/ui/comment-detail/comment-detail.component';
-import { LoadingSpinnerComponent } from '../../shared/ui/loading-spinner/loading-spinner.component';
+
+// Import modules
+import { SharedShellModule } from '../../shared/feature/shared-shell.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
-		CommentShellRoutingModule
+		CommentShellRoutingModule,
+		SharedShellModule
 	],
-	exports: [LoadingSpinnerComponent],
-	declarations: [CommentShellComponent, CommentDetailComponent, LoadingSpinnerComponent],
+	exports: [],
+	declarations: [CommentShellComponent, CommentDetailComponent],
 	providers: []
 })
 export class CommentShellModule {}

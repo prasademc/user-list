@@ -7,20 +7,22 @@ import { UserShellRoutingModule } from './user-shell-routing.module';
 
 //import components
 import { NameButtonComponent } from '../ui/name-button/name-button.component';
-import { LoadingSpinnerComponent } from '../../shared/ui/loading-spinner/loading-spinner.component';
 
 // Import pipes
 import { FirstNameOnlyPipe } from '../../shared/utils/first-name-only.pipe';
 
+// Import modules
+import { SharedShellModule } from '../../shared/feature/shared-shell.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
-		UserShellRoutingModule
+		UserShellRoutingModule,
+		SharedShellModule,
 	],
-	exports: [LoadingSpinnerComponent],
-	declarations: [UserShellComponent, NameButtonComponent, FirstNameOnlyPipe, LoadingSpinnerComponent],
-	providers: []
+	exports: [],
+	declarations: [UserShellComponent, NameButtonComponent, FirstNameOnlyPipe],
+	providers: [],
 })
 export class UseShellModule {}

@@ -7,16 +7,19 @@ import { PostShellRoutingModule } from './post-shell-routing.module';
 
 // Import components
 import { PostDetailComponent } from '../ui/post-detail/post-detail.component';
-import { LoadingSpinnerComponent } from '../../shared/ui/loading-spinner/loading-spinner.component';
+
+// Import modules
+import { SharedShellModule } from '../../shared/feature/shared-shell.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
 		PostShellRoutingModule,
+		SharedShellModule
 	],
-	exports: [LoadingSpinnerComponent],
-	declarations: [PostShellComponent, PostDetailComponent, LoadingSpinnerComponent],
+	exports: [],
+	declarations: [PostShellComponent, PostDetailComponent],
 	providers: []
 })
 export class PostShellModule {}
