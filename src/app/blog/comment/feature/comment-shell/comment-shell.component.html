@@ -1,0 +1,9 @@
+<section *ngIf="postComments$ | async as comments; loading" class="post-comments">
+	<app-comment-detail *ngFor="let comment of comments" [commentData]="comment"></app-comment-detail>
+</section>
+<ng-template #loading>
+	<section class="post-comments-loading">
+		<app-loading-spinner></app-loading-spinner>
+	</section>
+</ng-template>
+

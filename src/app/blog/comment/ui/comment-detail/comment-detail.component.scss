@@ -1,0 +1,14 @@
+.comment {
+	background-color: var(--color-bg-light);
+	padding: var(--size-6);
+	border-radius: var(--rounded);
+
+	&__body {
+		color: var(--color-bg-dark);
+	}
+
+	&__curator {
+		color: var(--color-secondry-content);
+		font-size: var(--text-lg);
+	}
+}

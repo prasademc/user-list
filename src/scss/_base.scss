@@ -1,0 +1,18 @@
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: var(--size-4);
+	font-weight: 1;
+	font-family: var(--font-family);
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+p {
+	font-size: var(--size-4);
+	font-family: var(--font-family);
+	color: var(--color-primary-contrast);
+}

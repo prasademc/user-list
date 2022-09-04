@@ -1,0 +1,18 @@
+<main class="user">
+	<p class="user__note">Please select a user to find their comments:</p>
+	<header class="user__header" *ngIf="users$ | async as users; else loading">
+		<app-name-button
+			*ngFor="let user of users"
+			[userData]="user"
+			(selectedUser)="onSelectedUserClick($event)"
+		></app-name-button>
+	</header>
+	<ng-template #loading>
+		<section class="user__loading">
+			<app-loading-spinner></app-loading-spinner>
+		</section>
+	</ng-template>
+	<section class="user__posts">
+		<router-outlet></router-outlet>
+	</section>
+</main>

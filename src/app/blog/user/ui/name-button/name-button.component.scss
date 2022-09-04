@@ -1,0 +1,26 @@
+.name-button {
+	width: 100%;
+	height: auto;
+	border-radius: var(--rounded-md);
+	color: var(--color-primary-contrast);
+	background-color: var(--color-secondry-content);
+	display: block;
+	text-align: center;
+	font-size: var(--text-2xl);
+	line-height: 1;
+	padding: var(--size-6);
+	margin: 0;
+	cursor: pointer;
+	border: var(--border) solid var(--color-secondry-content);
+	border-radius: var(--rounded);
+
+	&:hover {
+		color: var(--color-secondry-content);
+		background-color: var(--color-primary-contrast);
+	}
+
+	&--active {
+		color: var(--color-secondry-content);
+		background-color: var(--color-primary-contrast);
+	}
+}

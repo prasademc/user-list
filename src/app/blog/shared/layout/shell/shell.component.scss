@@ -1,5 +1,29 @@
 .container {
-	width: 100vw;
+	width: var(--size-screen-width);
 	min-height: 100vh;
-	background-color: var(--color-content-contrast);
+	background-color: var(--color-bg-dark);
+	padding: var(--size-6);
+	display: grid;
+	justify-items: center;
+	align-items: center;
+
+	&__button {
+		width: 180px;
+		height: auto;
+		border-radius: var(--rounded-md);
+		color: var(--color-primary-contrast);
+		background-color: var(--color-primary-content);
+		display: block;
+		text-align: center;
+		font-size: var(--text-2xl);
+		line-height: 1;
+		padding: var(--size-6);
+		cursor: pointer;
+		border: var(--border) solid var(--color-primary-content);
+
+		&:hover {
+			color: var(--color-primary-content);
+			background-color: var(--color-primary-contrast);
+		}
+	}
 }

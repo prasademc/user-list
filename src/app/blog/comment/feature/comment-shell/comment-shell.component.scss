@@ -1,0 +1,17 @@
+.post-comments {
+	width: calc(100% - 100px);
+	height: auto;
+	margin-top: var(--size-6);
+	margin-left: var(--size-6);
+	display: grid;
+	grid-gap: var(--size-5);
+	grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+}
+
+.post-comments-loading {
+	width: 100%;
+	height: auto;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}

@@ -1,0 +1,8 @@
+<div class="post-detail">
+	<div class="post-detail__content">
+		<h4 class="post-detail__title">{{ postData.title }}</h4>
+		<p class="post-detail__para">{{ postData.body }}</p>
+	</div>
+	<a (click)="onExpand(postData)" class="post-detail__expand-button" [ngClass]="{'post-detail__expand-button--active': isExpanded}"></a>
+</div>
+<router-outlet *ngIf="isExpanded"></router-outlet>

@@ -1,0 +1,24 @@
+<h3 class="posts__title" *ngIf="user$ | async as user">Posts from: {{ user.name }}</h3>
+<section class="posts" *ngIf="userPosts$ | async as posts; else loading">
+	<ng-container *ngIf="loadAll; then LoadAllPosts; else FirstThreePosts"></ng-container>
+	<ng-template #LoadAllPosts>
+		<app-post-detail
+			*ngFor="let post of posts"
+			[postData]="post"
+			(expandPost)="onExpandPost($event)"
+		></app-post-detail>
+	</ng-template>
+	<ng-template #FirstThreePosts>
+		<app-post-detail
+			*ngFor="let post of posts | slice: 0:3"
+			[postData]="post"
+			(expandPost)="onExpandPost($event)"
+		></app-post-detail>
+	</ng-template>
+	<a class="posts__load-button" (click)="onLoadAll()">...Load All</a>
+</section>
+<ng-template #loading>
+	<section class="post-loading">
+		<app-loading-spinner></app-loading-spinner>
+	</section>
+</ng-template>
