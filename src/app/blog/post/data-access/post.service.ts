@@ -20,7 +20,6 @@ export class PostService {
 			map((allPosts) =>
 				allPosts.filter((post) => post.userId == userID)
 			),
-			shareReplay(1),
 			retry(3),
 			catchError((err) => {
 				this.handleError(err);

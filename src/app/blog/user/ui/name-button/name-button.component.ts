@@ -33,10 +33,10 @@ export class NameButtonComponent implements OnInit, OnChanges, OnDestroy {
 	constructor(private navigationStatusService:NavigationStatusService, private ref: ChangeDetectorRef) {}
 
 	ngOnInit(): void {
-		this.navigationStatusSubscription.add(this.navigationStatusService.selectedUserID.subscribe((id) => {
+		this.navigationStatusService.selectedUserID.subscribe((id) => {
 			this.isSelected = id == this.userData.id ? true : false;
 			this.ref.detectChanges();
-		}));
+		})
 	}
 
 	ngOnDestroy(): void {

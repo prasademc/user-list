@@ -17,7 +17,6 @@ export class CommentService {
 	getCommentsByPost$(postID: number): Observable<Array<Comment>> {
 		return this.http.get<Array<Comment>>(`${this.API_BASE_URL}/comments`).pipe(
 			map((allComments) => allComments.filter((comment) => comment.postId == postID)),
-			shareReplay(1),
 			retry(3),
 			catchError((err) => {
 				this.handleError(err);

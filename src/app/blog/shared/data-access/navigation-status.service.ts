@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-	providedIn: 'root',
-})
+@Injectable()
 export class NavigationStatusService {
 	public selectedUserID: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 	constructor() {}
