@@ -3,6 +3,8 @@ import { Post } from './post.model';
 
 export const POST_INITIAL_STATE: PostStore = {
 	userPosts: [],
+	currentAllPost: [],
+	previousPostStatus: false,
 	user: {
 		id: 0,
 		name: '',

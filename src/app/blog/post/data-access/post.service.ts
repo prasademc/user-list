@@ -28,6 +28,19 @@ export class PostService {
 		);
 	}
 
+	getPostByUserAll$(userID: number): Observable<Array<Post>> {
+		return this.http.get<Array<Post>>(`${this.API_BASE_URL}/posts`).pipe(
+			map((allPosts) =>
+				allPosts.filter((post) => post.userId == userID)
+			),
+			retry(3),
+			catchError((err) => {
+				this.handleError(err);
+				return throwError(err);
+			})
+		);
+	}
+
 	private handleError(err: HttpErrorResponse): void {
 		console.log(err);
 	}

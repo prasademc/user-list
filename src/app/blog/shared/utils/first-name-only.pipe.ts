@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FirstNameOnlyPipe implements PipeTransform {
 	transform(value: string): string {
-		return value.split(/(\s+)/)[0];
+		const name = value.split('. ');
+		return name.length > 1 ? name[1].split(/(\s+)/)[0] : name[0].split(/(\s+)/)[0];
 	}
 }

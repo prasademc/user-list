@@ -24,10 +24,18 @@ export class PostStoreService extends ComponentStore<PostStore> {
 
 	readonly userPosts$ = this.select((state) => state.userPosts);
 	readonly user$ = this.select((state) => state.user);
+	readonly userCurrentPosts$ = this.select((state) => state.currentAllPost);
+
+
 
 	readonly setUserPosts = this.updater((state, userPosts: Array<Post>) => ({
 		...state,
 		userPosts,
+	}));
+
+	readonly setUserAllCurrentPosts = this.updater((state, currentAllPost: Array<Post>) => ({
+		...state,
+		currentAllPost,
 	}));
 
 	readonly setUser = this.updater((state, user: User) => ({
@@ -57,4 +65,18 @@ export class PostStoreService extends ComponentStore<PostStore> {
 			)
 		)
 	);
+
+
+	readonly fetchUserAllCurrentPosts = this.effect(
+		(posts$: Observable<{ userID: number }>) =>
+			posts$.pipe(
+				switchMap(({ userID }) =>
+					this.postService.getPostByUser$(userID).pipe(
+						tap((posts) => this.setUserPosts(posts)),
+						catchError(() => EMPTY)
+					)
+				)
+			)
+	);
+
 }

@@ -41,7 +41,8 @@ export class PostShellComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {}
 
 	onLoadAll(): void {
-		this.loadAll = !this.loadAll;
+		//this.loadAll = !this.loadAll;
+		this.userPosts$ = this.postStoreService.userCurrentPosts$;
 	}
 
 	onExpandPost(post: Post): void {

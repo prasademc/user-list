@@ -44,7 +44,7 @@ export class NameButtonComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	public onButtonClick(user: User): void {
-		this.navigationStatusService.updateSelectedUserId(user.id);
+		this.navigationStatusService.updateSelectedUserId(user.id, true);
 		this.selectedUser.emit(user);
 	}
 
